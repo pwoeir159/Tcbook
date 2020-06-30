@@ -12,7 +12,7 @@ public class UserDaoTest {
 	@Test
 	public void testQueryUserByUsername() {
 		
-		if(userdao.queryUserByUsername("123pw123")==null) {
+		if(userdao.queryUserByUsername("pw123")==null) {
 			System.out.println("用戶名不存在");
 		}else {
 			System.out.println("用戶名已存在");

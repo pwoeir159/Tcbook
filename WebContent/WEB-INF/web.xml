@@ -9,23 +9,33 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+   
   <servlet> 
-  <servlet-name>LoginServlet</servlet-name>
-  <servlet-class>com.pw.tcbook.servlet.LoginServlet</servlet-class>
+  <servlet-name>SearchProductServlet</servlet-name>
+  <servlet-class>com.pw.tc.store.servlet.SearchProductServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>LoginServlet</servlet-name>
-  <url-pattern>/loginservlet</url-pattern>
+  <servlet-name>SearchProductServlet</servlet-name>
+  <url-pattern>/searchProductServlet</url-pattern>
   </servlet-mapping>
-  
+
   <servlet> 
-  <servlet-name>SearchProduct</servlet-name>
-  <servlet-class>com.pw.tc.store.servlet.SearchProduct</servlet-class>
+  <servlet-name>StoreEditServlet</servlet-name>
+  <servlet-class>com.pw.tc.store.servlet.StoreEditServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>SearchProduct</servlet-name>
-  <url-pattern>/searchProduct</url-pattern>
+  <servlet-name>StoreEditServlet</servlet-name>
+  <url-pattern>/storeEditServlet</url-pattern>
   </servlet-mapping>
   
+    <servlet> 
+  <servlet-name>StroreTransactionServlet</servlet-name>
+  <servlet-class>com.pw.tc.store.servlet.StroreTransactionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>StroreTransactionServlet</servlet-name>
+  <url-pattern>/stroreTransactionServlet</url-pattern>
+  </servlet-mapping>
+  
+
 </web-app>

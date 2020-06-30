@@ -43,12 +43,20 @@ public class LoginServlet extends HttpServlet {
 		UserService userservice = new UserServiceImpl();
 		String Username = request.getParameter("username");
 		String Password = request.getParameter("password");
-		if(userservice.login(new User(null,Username,Password,null))==null) {
+		//判斷用戶名是否存在，不存在請求頁面到登入失敗，存在的話判斷密碼是否正確
+		if(!userservice.existsUsername(Username)) {
+			System.out.println("無此帳號，登入錯誤");
+			request.getRequestDispatcher("/LoginFailed.jsp").forward(request, response);
+		}
+		//判斷用戶帳號密碼是否正確
+		else if(userservice.login(new User(null,Username,Password,null))==null) {
 			System.out.println("用戶名稱或是密碼錯誤");
-			request.getRequestDispatcher("/Index.jsp").forward(request, response);
+			request.getRequestDispatcher("/WrongPassword.jsp").forward(request, response);
 		}else {
 			System.out.println("登入成功");
-			response.sendRedirect("./searchProduct?action=list");
+			//先跳轉到searchProduct 的 list方法 呈現出所有商品
+			//response.sendRedirect("./searchProduct?action=list");
+			response.sendRedirect("./LoginOk.jsp");
 			
 		}
 	}

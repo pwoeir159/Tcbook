@@ -13,8 +13,6 @@
 			<td><input type="text" name="username">帳號</td><tr>
 			<td><input type="password" name="password">密碼</td><tr>
 			<td><input type="submit" value="登入"></td>
-
-
 		</form>
 	</table>
 </body>

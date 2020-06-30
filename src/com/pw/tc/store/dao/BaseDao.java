@@ -95,6 +95,10 @@ public abstract class BaseDao {
 		}
 		return null;
 	}
+	public int DeleteCommodity(String name) throws SQLException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 }

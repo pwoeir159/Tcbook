@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.pw.tc.store.dao.StoreDao;
 import com.pw.tc.store.dao.StoreDaoImpl;
+import com.pw.tc.store.pojo.Commodity;
 
 public class StoreDaoImplTest {
 	StoreDao storedao = new StoreDaoImpl();
@@ -29,12 +30,12 @@ public class StoreDaoImplTest {
 
 	@Test
 	public void testCommodityByMaxPirce() {
-		System.out.println(storedao.CommodityByMaxPirce(200));
+		System.out.println(storedao.CommodityByMaxPirce("200"));
 	}
 
 	@Test
 	public void testCommodityByMinPirce() {
-		System.out.println(storedao.CommodityByMinPirce(300));
+		System.out.println(storedao.CommodityByMinPirce("300"));
 	}
 
 	@Test
@@ -44,6 +45,14 @@ public class StoreDaoImplTest {
 	@Test
 	public void testReplenishStock() throws SQLException {
 		System.out.println(storedao.ReplenishStock("球A款",10));
+	}
+	@Test
+	public void testAddCommodity() throws SQLException {
+		System.out.println(storedao.AddCommodity(new Commodity("眼鏡","眼鏡A款",230,20)) );
+	}
+	@Test
+	public void testDeleteCommodity() throws SQLException {
+		System.out.println(storedao.DeleteCommodity("眼鏡A款"));
 	}
 	
 	
